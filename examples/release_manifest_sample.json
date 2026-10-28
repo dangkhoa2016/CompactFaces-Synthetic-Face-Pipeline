@@ -1,0 +1,115 @@
+{
+  "schema": "compactfaces_release_manifest_v1",
+  "name": "CompactFaces — Synthetic Face Identity Dataset",
+  "release_version": "1.0.0",
+  "status": "HUMAN_ACCEPTED_NOT_PUBLICLY_RELEASED",
+  "identity_families": 187,
+  "image_count": 935,
+  "collections": {
+    "core": {
+      "families": 120,
+      "images": 600
+    },
+    "additional_optional": {
+      "families": 67,
+      "images": 335
+    }
+  },
+  "slots": [
+    "E1",
+    "E2",
+    "P1",
+    "P2",
+    "SOURCE"
+  ],
+  "width": 1024,
+  "height": 1024,
+  "image_bytes_verified": true,
+  "original_acceptance_record_sha256": "46a389b39a906259308083e4728c85a89d19446fd1ed79fe68753a29a6cbf3eb",
+  "distribution_rights_verified": false,
+  "public_release_authorized": false,
+  "images": [
+    {
+      "file_name": "images/core/identity_0002_SOURCE.png",
+      "identity_key": "CORE:0002",
+      "collection": "CORE",
+      "slot": "SOURCE",
+      "sha256": "b0d02c19d733297bb7d57b5e00225f69e08c81cc2826e22a8ae51bc7ff564e92",
+      "source_sha256": "b0d02c19d733297bb7d57b5e00225f69e08c81cc2826e22a8ae51bc7ff564e92"
+    },
+    {
+      "file_name": "images/core/identity_0002_P1.png",
+      "identity_key": "CORE:0002",
+      "collection": "CORE",
+      "slot": "P1",
+      "sha256": "5353029b48fdb1e223112fa76315d9be05d3870a40e9e18bc2be5cf9ac292f7c",
+      "source_sha256": "b0d02c19d733297bb7d57b5e00225f69e08c81cc2826e22a8ae51bc7ff564e92"
+    },
+    {
+      "file_name": "images/core/identity_0002_P2.png",
+      "identity_key": "CORE:0002",
+      "collection": "CORE",
+      "slot": "P2",
+      "sha256": "188bee3176843e03572bfc6929d76d8908a78a78390d02dfb7ff79e53d859be0",
+      "source_sha256": "b0d02c19d733297bb7d57b5e00225f69e08c81cc2826e22a8ae51bc7ff564e92"
+    },
+    {
+      "file_name": "images/core/identity_0002_E1.png",
+      "identity_key": "CORE:0002",
+      "collection": "CORE",
+      "slot": "E1",
+      "sha256": "e081d9308458394a5e9da2ada169bd2e7f3f5c43d9e2ba960e236087e471a46f",
+      "source_sha256": "b0d02c19d733297bb7d57b5e00225f69e08c81cc2826e22a8ae51bc7ff564e92"
+    },
+    {
+      "file_name": "images/core/identity_0002_E2.png",
+      "identity_key": "CORE:0002",
+      "collection": "CORE",
+      "slot": "E2",
+      "sha256": "a0d02e18f0ad1865ab8ae7bee5597dd940e902e626d45e6ef3647047ec5f88a8",
+      "source_sha256": "b0d02c19d733297bb7d57b5e00225f69e08c81cc2826e22a8ae51bc7ff564e92"
+    },
+    {
+      "file_name": "images/core/identity_0003_SOURCE.png",
+      "identity_key": "CORE:0003",
+      "collection": "CORE",
+      "slot": "SOURCE",
+      "sha256": "e309aedf05c7d16fda59cf40ba6d154db590f475aa6d73e38dd78839bde6c5fa",
+      "source_sha256": "e309aedf05c7d16fda59cf40ba6d154db590f475aa6d73e38dd78839bde6c5fa"
+    },
+    {
+      "file_name": "images/core/identity_0003_P1.png",
+      "identity_key": "CORE:0003",
+      "collection": "CORE",
+      "slot": "P1",
+      "sha256": "9f5a4e563ab79e308f074c8819d1fd4f032ce20b4100ffa3d807a5cee7747a93",
+      "source_sha256": "e309aedf05c7d16fda59cf40ba6d154db590f475aa6d73e38dd78839bde6c5fa"
+    },
+    {
+      "file_name": "images/core/identity_0003_P2.png",
+      "identity_key": "CORE:0003",
+      "collection": "CORE",
+      "slot": "P2",
+      "sha256": "467f7f31c1a24fae69a4d90cc968362ba77628b90c347dd398598daa9fc3674d",
+      "source_sha256": "e309aedf05c7d16fda59cf40ba6d154db590f475aa6d73e38dd78839bde6c5fa"
+    },
+    {
+      "file_name": "images/core/identity_0003_E1.png",
+      "identity_key": "CORE:0003",
+      "collection": "CORE",
+      "slot": "E1",
+      "sha256": "b4c0d9c0f9f6e680a6b47434cc157247693cce96ba01041e9b2240c6928674c2",
+      "source_sha256": "e309aedf05c7d16fda59cf40ba6d154db590f475aa6d73e38dd78839bde6c5fa"
+    },
+    {
+      "file_name": "images/core/identity_0003_E2.png",
+      "identity_key": "CORE:0003",
+      "collection": "CORE",
+      "slot": "E2",
+      "sha256": "f80f03d4ae67503c478fc6b11c013c3a2d7ba2eb91ee6d191f4273e540ecf329",
+      "source_sha256": "e309aedf05c7d16fda59cf40ba6d154db590f475aa6d73e38dd78839bde6c5fa"
+    }
+  ],
+  "example_only": true,
+  "sample_count": 10
+}

@@ -1,0 +1,17 @@
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.zip
+*.gguf
+*.safetensors
+.env
+.env.*
+**/.kaggle/
+**/.cache/
+__pycache__/
+.pytest_cache/
+data/
+datasets/
+models/
+weights/
