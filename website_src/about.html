@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="icon" href="data:,">
+<meta name="description" content="Learn about CompactFaces 1.0.0: 187 synthetic identities, 935 curated images, the generation pipeline, source code and limitations.">
+<title>About — CompactFaces 1.0.0</title>
+<link rel="stylesheet" href="./styles.css"><script defer src="./pages.js"></script>
+</head>
+<body data-page="about">
+<a class="skip" href="#main">Skip to content</a>
+<header class="header" id="top"><div class="header-inner shell">
+  <a class="brand" href="./index.html" aria-label="CompactFaces home"><span class="brand-symbol" aria-hidden="true"><span></span><span></span><span></span><span></span></span><span class="brand-name">Compact<span>Faces</span><small>DATASET / 1.0.0</small></span></a>
+  <nav class="header-nav" aria-label="Primary">
+    <a href="./index.html#explore" data-i18n="navExplore">Explore</a>
+    <a href="./about.html" data-i18n="navAbout">About</a>
+    <a href="./contact.html" data-i18n="navContact">Contact</a>
+  </nav>
+  <div class="header-actions">
+    <button class="icon-btn" type="button" id="themeToggle" aria-label="Toggle dark mode" title="Toggle appearance"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    <button class="lang-switch" type="button" id="languageToggle" aria-label="Switch language">VI</button>
+    <a class="mobile-contact" href="./contact.html" aria-label="Contact and image removal requests">✉</a>
+    <a class="header-cta" href="./index.html#access"><span data-i18n="navAccess">Get originals</span><span aria-hidden="true"> ↗</span></a>
+  </div>
+</div></header>
+<main id="main">
+  <section class="inner-hero shell">
+    <a href="./index.html#explore" class="breadcrumb"><span aria-hidden="true">←</span> <span data-i18n="backGallery">Back to gallery</span></a>
+    <p class="kicker" data-i18n="aboutKicker">ABOUT THE PROJECT</p>
+    <h1 data-i18n="aboutHeading">Synthetic faces, curated for exploration.</h1>
+    <p class="inner-lead" data-i18n="aboutIntro">CompactFaces 1.0.0 is a curated synthetic-face collection organized by identity. The gallery gives people a way to inspect each set of five images without downloading the original files.</p>
+    <div class="mini-stats"><div><strong>187</strong><span data-i18n="families">identity families</span></div><div><strong>935</strong><span data-i18n="images">accepted images</span></div><div><strong>1024px</strong><span data-i18n="originals">original PNG resolution</span></div></div>
+  </section>
+  <section class="inner-section alt-section"><div class="shell">
+    <p class="kicker" data-i18n="structureKicker">DATASET STRUCTURE</p><h2 data-i18n="structureHeading">One identity, five views</h2>
+    <p class="inner-paragraph" data-i18n="structureIntro">There are 120 Core families (600 images) and 67 Additional Optional families (335 images). Each family has five named views:</p>
+    <div class="five-slots">
+      <article><span>SOURCE</span><p data-i18n="sourceDescription">Reference portrait for the synthetic identity.</p></article>
+      <article><span>P1</span><p data-i18n="p1Description">First pose variation.</p></article>
+      <article><span>P2</span><p data-i18n="p2Description">Second pose variation.</p></article>
+      <article><span>E1</span><p data-i18n="e1Description">First expression variation.</p></article>
+      <article><span>E2</span><p data-i18n="e2Description">Second expression variation.</p></article>
+    </div>
+    <p class="inner-paragraph note-paragraph" data-i18n="datasetCaution">The identity labels describe synthetic image groups; they do not establish biometric uniqueness or guarantee that faces cannot resemble real people.</p>
+  </div></section>
+  <section class="inner-section"><div class="shell">
+    <p class="kicker" data-i18n="sourceKicker">TECHNICAL IMPLEMENTATION</p><h2 data-i18n="sourceHeading">How the source code works</h2>
+    <div class="technical-grid">
+      <article class="technical-card"><span class="technical-number">01 / DATA</span><h3 data-i18n="dataTitle">Image generation and edits</h3><p data-i18n="dataText">Images were generated and edited using Mage-Flow-Turbo and Mage-Flow-Edit-Turbo. Published prompt metadata alone does not enable byte-identical reproduction of all 935 images.</p></article>
+      <article class="technical-card"><span class="technical-number">02 / VALIDATE</span><h3 data-i18n="verifyTitle">Integrity verification</h3><p data-i18n="verifyText">Python validators check each identity’s five slots, the release inventory and SHA256 hashes of the 1024px PNG originals before generating preview assets.</p></article>
+      <article class="technical-card"><span class="technical-number">03 / BUILD</span><h3 data-i18n="buildTitle">Static gallery build</h3><p data-i18n="buildText">Python and Pillow produce WebP thumbnails at 400px and detail previews at 768px. Responsive HTML, CSS and vanilla JavaScript power the gallery without a backend or external UI framework.</p></article>
+      <article class="technical-card"><span class="technical-number">04 / ACCESS</span><h3 data-i18n="accessTitle">Separate original downloads</h3><p data-i18n="accessText">Original 1024px PNGs and metadata are hosted on Hugging Face and Kaggle. The engineering toolkit is on GitHub.</p></article>
+    </div>
+    <div class="source-note"><h3 data-i18n="sourceRepoTitle">Dataset and source code</h3><p data-i18n="sourceRepoText">Access original images and metadata via Hugging Face or Kaggle, and explore the project tools on GitHub.</p><div class="resource-links"><a class="source-repo-link" id="aboutHuggingFaceLink" href="https://huggingface.co/datasets/dangkhoa2016/compactfaces-synthetic-face-dataset" target="_blank" rel="noopener noreferrer"><span data-i18n="openHuggingFace">View dataset on Hugging Face</span><span aria-hidden="true">↗</span></a><a class="source-repo-link" id="aboutKaggleLink" href="https://www.kaggle.com/datasets/dangkhoa2016/compactfaces-synthetic-face-dataset" target="_blank" rel="noopener noreferrer"><span data-i18n="openKaggle">View dataset on Kaggle</span><span aria-hidden="true">↗</span></a><a class="source-repo-link" id="sourceRepoLink" href="https://github.com/dangkhoa2016/CompactFaces-Synthetic-Face-Pipeline" target="_blank" rel="noopener noreferrer"><span data-i18n="openRepository">View source on GitHub</span><span aria-hidden="true">↗</span></a></div></div>
+  </div></section>
+  <section class="inner-section alt-section"><div class="shell">
+    <p class="kicker" data-i18n="ethicsKicker">TRANSPARENCY AND REMOVAL</p>
+    <h2 data-i18n="ethicsHeading">Images can be synthetic and still resemble someone.</h2>
+    <p class="inner-paragraph" data-i18n="ethicsText">If you believe a face resembles you or you have a rights or privacy concern, you can request review of a specific identity or image. Please provide the identity code and the view (if relevant); you do not need to upload a selfie through this site.</p>
+    <p class="inner-paragraph" data-i18n="licenseText">Model licenses and generated-dataset redistribution rights are separate questions. The viewer does not claim biometric uniqueness or grant redistribution rights over externally supplied image data.</p>
+    <a class="button-primary" href="./contact.html"><span data-i18n="contactCta">Contact about an image</span><span aria-hidden="true">→</span></a>
+  </div></section>
+</main>
+<footer class="footer"><div class="shell footer-inner"><div>
+  <a class="footer-brand" href="./index.html">CompactFaces</a>
+  <p data-i18n="footerText">Synthetic faces. Carefully curated. Independently explored.</p>
+  <p class="copyright">© 2026 Đăng Khoa · <a href="mailto:i.am@dangkhoa.dev">i.am@dangkhoa.dev</a></p>
+</div><div class="footer-right"><span>1.0.0</span><a href="https://github.com/dangkhoa2016/CompactFaces-Synthetic-Face-Pipeline" target="_blank" rel="noopener noreferrer">GitHub</a><a href="./about.html" data-i18n="navAbout">About</a><a href="./contact.html" data-i18n="navContact">Contact</a><a href="#top" class="back-to-top" data-i18n="backToTop">Back to top ↑</a></div></div></footer>
+</body>
+</html>
