@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: CPU source and documentation validation
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Validate bilingual docs and repository boundary
+        run: python scripts/validate_repository.py
+      - name: Check publication-safe source and documentation
+        run: python scripts/audit_publication.py
+      - name: Compile Python and notebook code
+        run: |
+          python -m py_compile scripts/verify_dataset.py scripts/build_static_gallery.py scripts/validate_repository.py scripts/validate_notebooks.py scripts/audit_publication.py scripts/model_assets.py scripts/test_modal_workflow.py scripts/compare_platform_metadata.py scripts/validate_release_manifest_sample.py scripts/test_publication_integrity.py scripts/test_dataset_validator.py scripts/test_gallery_cache.py modal_app.py
+          python -c "import json; from pathlib import Path; n=json.loads(Path('notebooks/compactfaces_kaggle_cpu_validation.ipynb').read_text()); [compile(''.join(c['source']),'<notebook>','exec') for c in n['cells'] if c['cell_type']=='code']"
+      - name: Unit-test model integrity and optional Modal runner source
+        run: python -m unittest -v scripts/test_modal_workflow.py
+      - name: Validate illustrative release inventory and cross-platform comparison tests
+        run: |
+          python scripts/validate_release_manifest_sample.py
+          python -m unittest -v scripts/test_publication_integrity.py
+      - name: Verify integrated bilingual cells and standalone demo
+        run: python scripts/validate_notebooks.py
+      - name: Install Pillow for synthetic FULL fixture regression
+        run: python -m pip install Pillow
+      - name: Regression-test notebook FULL and PARTIAL with temporary fixtures
+        run: python scripts/test_notebook_full_fixture.py
+      - name: Validate JavaScript and Bash
+        run: |
+          node --check website_src/app.js
+          node --check website_src/pages.js
+          node scripts/test_website_interactions.js
+          bash -n scripts/reproduce_source_pose_example.sh
+      - name: Verify synthetic sample inventory
+        run: python scripts/verify_dataset.py examples --expected-images 10 --expected-families 2
+      - name: Negative-test dataset validator and WebP cache
+        run: python -m unittest -v scripts.test_dataset_validator scripts.test_gallery_cache
