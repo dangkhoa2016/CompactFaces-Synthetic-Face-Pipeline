@@ -1,0 +1,10 @@
+{
+  "brand": "CompactFaces",
+  "release": "1.0.0",
+  "publication_status": "LOCAL_PREVIEW",
+  "downloads": {
+    "huggingface": "",
+    "kaggle": ""
+  },
+  "allow_indexing": false
+}
